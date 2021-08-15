@@ -1,0 +1,4 @@
+select SoHD, NgayOder,Gia FROM oder;
+SELECT TenKh, TenSp FROM customor JOIN oder o on customor.MaKh = o.MaKh JOIN `0derdetail` `0d` on o.SoHD = `0d`.SoHD  JOIN product p on p.MaSP = `0d`.MaSP;
+SELECT TenKh,MaKh FROM customor where NOT EXISTS(select MaKh FROM oder where oder.MaKh = customor.MaKh);
+
